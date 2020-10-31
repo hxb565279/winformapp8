@@ -64,15 +64,15 @@ namespace WindowsFormsApp8
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(182, 29);
+            this.textBox2.Location = new System.Drawing.Point(198, 29);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(82, 21);
+            this.textBox2.Size = new System.Drawing.Size(66, 21);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(304, 28);
+            this.textBox3.Location = new System.Drawing.Point(315, 28);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(79, 21);
             this.textBox3.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace WindowsFormsApp8
             // 
             // checkbutton1
             // 
-            this.checkbutton1.Location = new System.Drawing.Point(389, 28);
+            this.checkbutton1.Location = new System.Drawing.Point(400, 28);
             this.checkbutton1.Name = "checkbutton1";
             this.checkbutton1.Size = new System.Drawing.Size(55, 21);
             this.checkbutton1.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace WindowsFormsApp8
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(13, 32);
+            this.label1.Location = new System.Drawing.Point(3, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace WindowsFormsApp8
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(149, 28);
+            this.label2.Location = new System.Drawing.Point(149, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 21);
             this.label2.TabIndex = 6;
@@ -117,7 +117,7 @@ namespace WindowsFormsApp8
             // 
             // add_stock
             // 
-            this.add_stock.Location = new System.Drawing.Point(450, 29);
+            this.add_stock.Location = new System.Drawing.Point(461, 27);
             this.add_stock.Name = "add_stock";
             this.add_stock.Size = new System.Drawing.Size(61, 21);
             this.add_stock.TabIndex = 8;
@@ -127,7 +127,7 @@ namespace WindowsFormsApp8
             // 
             // delete1
             // 
-            this.delete1.Location = new System.Drawing.Point(517, 30);
+            this.delete1.Location = new System.Drawing.Point(528, 30);
             this.delete1.Name = "delete1";
             this.delete1.Size = new System.Drawing.Size(66, 20);
             this.delete1.TabIndex = 9;

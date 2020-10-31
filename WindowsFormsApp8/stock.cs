@@ -268,8 +268,7 @@ namespace WindowsFormsApp8
                             if (num1 > 0)
                             {
                                 MessageBox.Show("插入成功");
-                                Form1.form1.库存管理ToolStripMenuItem_Click(null,null);
-
+                                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
                             }
                             else
                             {
@@ -322,28 +321,30 @@ namespace WindowsFormsApp8
         {
             Database2 db = new Database2();
             MySqlConnection conn = db.getConn();
-            String name = Interaction.InputBox("商品名", "删除", "", 3, 3);
-
             try
             {
+                String name = Interaction.InputBox("商品名", "删除", "", 3, 3);
                 if (name == "")
                 {
-                    MessageBox.Show("输入有空");
+                    MessageBox.Show("输入为空");
                 }
                 else
                 {
                     conn.Open();
-                    String sql = String.Format("delete from stock_store where stock_shop_name = '{0}'", name);
-                    MySqlCommand comm = new MySqlCommand(sql, conn);
-                    int num = comm.ExecuteNonQuery();
-                    if (num > 0)
+                    String sql =
+                        String.Format("select stock_shop_number from stock_store where stock_shop_name = '{0}'", name);
+                    String sql2 = String.Format("select * from stock_store where stock_shop_name = '{0}'", name);
+                    MySqlCommand comm1 = new MySqlCommand(sql, conn);
+                    MySqlCommand comm = new MySqlCommand(sql2, conn);
+                    int num3 = Convert.ToInt32(comm.ExecuteScalar());
+                    if (num3 > 0)
                     {
-                        MessageBox.Show("删除成功");
-                        Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+                        int numbers = Convert.ToInt32(comm1.ExecuteScalar());
+                        MessageBox.Show(name + "剩余数量为" + numbers.ToString());
                     }
                     else
                     {
-                        MessageBox.Show("删除失败");
+                        MessageBox.Show("该商品已无");
                     }
                 }
             }
