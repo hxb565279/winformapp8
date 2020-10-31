@@ -340,7 +340,35 @@ namespace WindowsFormsApp8
                     if (num3 > 0)
                     {
                         int numbers = Convert.ToInt32(comm1.ExecuteScalar());
-                        MessageBox.Show(name + "剩余数量为" + numbers.ToString());
+                        if (numbers<5&&numbers>0)
+                        {
+                            MessageBox.Show(name + "库存仅剩" + numbers.ToString() + "请及时进货");
+                        }
+                        else
+                        {
+                            MessageBox.Show(name + "剩余数量为" + numbers.ToString()); 
+                        }
+                        String  num2 =   Interaction.InputBox("要删除数量", "删除", "", 3, 3);
+                      int num22 = Convert.ToInt32(num2);
+                      if (num22>=numbers)
+                      {
+                          MessageBox.Show("删除商品数量够多,库存不足");
+                      }
+                      else
+                      {
+                          String sql3 = String.Format("update stock_store set stock_shop_number= '{0}' where stock_shop_name='{1}'",(numbers-num22).ToString(),name);   
+                          MySqlCommand COMM = new MySqlCommand(sql3,conn);
+                          int num4 =    COMM.ExecuteNonQuery();
+                          if (num4 > 0)
+                          {
+                              MessageBox.Show("删除成功");
+                              Form1.form1.库存管理ToolStripMenuItem_Click(null,null);
+                          }
+                          else
+                          {
+                              MessageBox.Show("删除失败");
+                          }
+                      }
                     }
                     else
                     {
