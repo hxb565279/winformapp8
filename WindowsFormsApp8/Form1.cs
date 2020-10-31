@@ -28,7 +28,7 @@ namespace WindowsFormsApp8
         {
         }
 
-        private void 库存管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        public void 库存管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in this.MdiChildren)
             {

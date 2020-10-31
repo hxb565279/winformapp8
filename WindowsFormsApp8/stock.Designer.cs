@@ -40,6 +40,7 @@ namespace WindowsFormsApp8
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.add_stock = new System.Windows.Forms.Button();
+            this.delete1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,15 +56,15 @@ namespace WindowsFormsApp8
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 31);
+            this.textBox1.Location = new System.Drawing.Point(61, 28);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 21);
+            this.textBox1.Size = new System.Drawing.Size(82, 21);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 30);
+            this.textBox2.Location = new System.Drawing.Point(182, 29);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(82, 21);
             this.textBox2.TabIndex = 2;
@@ -71,7 +72,7 @@ namespace WindowsFormsApp8
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(376, 30);
+            this.textBox3.Location = new System.Drawing.Point(304, 28);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(79, 21);
             this.textBox3.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace WindowsFormsApp8
             // 
             // checkbutton1
             // 
-            this.checkbutton1.Location = new System.Drawing.Point(484, 31);
+            this.checkbutton1.Location = new System.Drawing.Point(389, 28);
             this.checkbutton1.Name = "checkbutton1";
             this.checkbutton1.Size = new System.Drawing.Size(55, 21);
             this.checkbutton1.TabIndex = 4;
@@ -98,7 +99,7 @@ namespace WindowsFormsApp8
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(187, 30);
+            this.label2.Location = new System.Drawing.Point(149, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 21);
             this.label2.TabIndex = 6;
@@ -107,7 +108,7 @@ namespace WindowsFormsApp8
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(337, 31);
+            this.label3.Location = new System.Drawing.Point(270, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 7;
@@ -116,7 +117,7 @@ namespace WindowsFormsApp8
             // 
             // add_stock
             // 
-            this.add_stock.Location = new System.Drawing.Point(562, 30);
+            this.add_stock.Location = new System.Drawing.Point(450, 29);
             this.add_stock.Name = "add_stock";
             this.add_stock.Size = new System.Drawing.Size(61, 21);
             this.add_stock.TabIndex = 8;
@@ -124,11 +125,22 @@ namespace WindowsFormsApp8
             this.add_stock.UseVisualStyleBackColor = true;
             this.add_stock.Click += new System.EventHandler(this.add_stock_Click);
             // 
+            // delete1
+            // 
+            this.delete1.Location = new System.Drawing.Point(517, 30);
+            this.delete1.Name = "delete1";
+            this.delete1.Size = new System.Drawing.Size(66, 20);
+            this.delete1.TabIndex = 9;
+            this.delete1.Text = "删除信息";
+            this.delete1.UseVisualStyleBackColor = true;
+            this.delete1.Click += new System.EventHandler(this.delete1_Click);
+            // 
             // stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.delete1);
             this.Controls.Add(this.add_stock);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -144,6 +156,8 @@ namespace WindowsFormsApp8
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button delete1;
 
         private System.Windows.Forms.Button add_stock;
 

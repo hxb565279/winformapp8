@@ -230,7 +230,7 @@ namespace WindowsFormsApp8
             MySqlConnection conn = db.getConn();
             try
             {
-                string shop_name = Interaction.InputBox("商品名", "添加库存信息", "", 1, 1);
+                string shop_name = Interaction.InputBox("商品名", "添加库存信息", "", 3, 3);
                 if (shop_name == "")
                 {
                     MessageBox.Show("填写为空 ");
@@ -242,7 +242,7 @@ namespace WindowsFormsApp8
                     MySqlCommand comm1 = new MySqlCommand(sql2, conn);
                     if (Convert.ToInt32(comm1.ExecuteScalar()) > 0)
                     {
-                        string shop_number = Interaction.InputBox("商品数量", "添加库存信息", "", 1, 1);
+                        string shop_number = Interaction.InputBox("商品数量", "添加库存信息", "", 3, 3);
                         int nums = Convert.ToInt32(shop_number);
                         if (shop_number == "")
                         {
@@ -258,23 +258,29 @@ namespace WindowsFormsApp8
                                     shop_name);
                             MySqlCommand comm3 = new MySqlCommand(sql4, conn);
                             MySqlCommand comm5 = new MySqlCommand(sql5, conn);
-                            int numbers = Convert.ToInt32(  comm3.ExecuteScalar());
-                            MessageBox.Show(shop_name);
-                            MessageBox.Show(numbers.ToString());
-                            MessageBox.Show(nums.ToString());
-                            MessageBox.Show((numbers + nums).ToString());
+                            int numbers = Convert.ToInt32(comm3.ExecuteScalar());
                             String sql3 =
                                 String.Format(
                                     "update  stock_store  set    stock_shop_number='{2}' where stock_shop_name='{0}' ",
                                     shop_name, comm5.ExecuteNonQuery().ToString(), (numbers + nums).ToString());
                             MySqlCommand comm4 = new MySqlCommand(sql3, conn);
-                            comm4.ExecuteNonQuery();
+                            int num1 = comm4.ExecuteNonQuery();
+                            if (num1 > 0)
+                            {
+                                MessageBox.Show("插入成功");
+                                Form1.form1.库存管理ToolStripMenuItem_Click(null,null);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("插入失败");
+                            }
                         }
                     }
                     else
                     {
-                        string shop_price2 = Interaction.InputBox("商品价格", "添加库存信息", "", 1, 1);
-                        string shop_number2 = Interaction.InputBox("商品数量", "添加库存信息", "", 1, 1);
+                        string shop_price2 = Interaction.InputBox("商品价格", "添加库存信息", "", 3, 3);
+                        string shop_number2 = Interaction.InputBox("商品数量", "添加库存信息", "", 3, 3);
                         if (shop_price2 == "" || shop_number2 == "")
                         {
                             MessageBox.Show("输入为空");
@@ -291,12 +297,53 @@ namespace WindowsFormsApp8
                             if (num > 0)
                             {
                                 MessageBox.Show("插入成功");
+                                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
                             }
                             else
                             {
                                 MessageBox.Show("插入失败");
                             }
                         }
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void delete1_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            String name = Interaction.InputBox("商品名", "删除", "", 3, 3);
+
+            try
+            {
+                if (name == "")
+                {
+                    MessageBox.Show("输入有空");
+                }
+                else
+                {
+                    conn.Open();
+                    String sql = String.Format("delete from stock_store where stock_shop_name = '{0}'", name);
+                    MySqlCommand comm = new MySqlCommand(sql, conn);
+                    int num = comm.ExecuteNonQuery();
+                    if (num > 0)
+                    {
+                        MessageBox.Show("删除成功");
+                        Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除失败");
                     }
                 }
             }
