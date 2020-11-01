@@ -33,6 +33,9 @@ namespace WindowsFormsApp8
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.create1 = new System.Windows.Forms.Button();
+            this.transh = new System.Windows.Forms.Button();
+            this.update11 = new System.Windows.Forms.Button();
+            this.deletebutton1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +59,44 @@ namespace WindowsFormsApp8
             this.create1.UseVisualStyleBackColor = true;
             this.create1.Click += new System.EventHandler(this.create1_Click);
             // 
+            // transh
+            // 
+            this.transh.Location = new System.Drawing.Point(142, 359);
+            this.transh.Name = "transh";
+            this.transh.Size = new System.Drawing.Size(74, 36);
+            this.transh.TabIndex = 2;
+            this.transh.Text = "刷新页面";
+            this.transh.UseVisualStyleBackColor = true;
+            this.transh.Click += new System.EventHandler(this.transh_Click);
+            // 
+            // update11
+            // 
+            this.update11.Location = new System.Drawing.Point(28, 440);
+            this.update11.Name = "update11";
+            this.update11.Size = new System.Drawing.Size(101, 41);
+            this.update11.TabIndex = 3;
+            this.update11.Text = "更改某一行";
+            this.update11.UseVisualStyleBackColor = true;
+            this.update11.Click += new System.EventHandler(this.update11_Click);
+            // 
+            // deletebutton1
+            // 
+            this.deletebutton1.Location = new System.Drawing.Point(142, 437);
+            this.deletebutton1.Name = "deletebutton1";
+            this.deletebutton1.Size = new System.Drawing.Size(105, 44);
+            this.deletebutton1.TabIndex = 4;
+            this.deletebutton1.Text = "删除选中一行";
+            this.deletebutton1.UseVisualStyleBackColor = true;
+            this.deletebutton1.Click += new System.EventHandler(this.deletebutton1_Click);
+            // 
             // outbound
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 564);
+            this.Controls.Add(this.deletebutton1);
+            this.Controls.Add(this.update11);
+            this.Controls.Add(this.transh);
             this.Controls.Add(this.create1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "outbound";
@@ -69,6 +105,12 @@ namespace WindowsFormsApp8
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button deletebutton1;
+
+        private System.Windows.Forms.Button update11;
+
+        private System.Windows.Forms.Button transh;
 
         private System.Windows.Forms.Button create1;
 
