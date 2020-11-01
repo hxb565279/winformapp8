@@ -155,9 +155,6 @@ namespace WindowsFormsApp8
                         sda.Fill(ds, "outbound");
                         String shop_name = ds.Tables[0].Rows[0]["OUTBOUND_SHOP_NAME"].ToString().Trim();
                         String shop_number = ds.Tables[0].Rows[0]["outbound_shop_number"].ToString().Trim();
-
-                        MessageBox.Show(shop_name);
-                        MessageBox.Show(shop_number);
                         String sql2 = String.Format("select * from stock_store where stock_shop_name = '{0}'",
                             shop_name);
                         MySqlCommand comm2 = new MySqlCommand(sql2, conn);
@@ -170,6 +167,32 @@ namespace WindowsFormsApp8
                             String stock_number = ds1.Tables[0].Rows[0]["stock_shop_number"].ToString().Trim();
                             if (Convert.ToInt32(stock_number) > Convert.ToInt32(shop_number))
                             {
+                                String stock_sql =
+                                    String.Format(
+                                        "update stock_store set stock_shop_number = '{0}'-'{1}' where stock_shop_name = '{2}'",
+                                        stock_number, shop_number, shop_name);
+                                MySqlCommand comm_stock_sql = new MySqlCommand(stock_sql, conn);
+                                int stock_sql_num1 = comm_stock_sql.ExecuteNonQuery();
+                                if (stock_sql_num1 > 0)
+                                {
+                                    String outbound_sql =
+                                        String.Format("delete from outbound where outbound_shop_name = '{0}'",
+                                            shop_name);
+                                    MySqlCommand comm_outbound_sql = new MySqlCommand(outbound_sql, conn);
+                                    int out_sql_num = comm_outbound_sql.ExecuteNonQuery();
+                                    if (out_sql_num > 0)
+                                    {
+                                        MessageBox.Show("订单更新成功");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("订单更新失败");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("请求订单失败");
+                                }
                             }
                             else
                             {
@@ -182,40 +205,43 @@ namespace WindowsFormsApp8
                                 }
                                 else
                                 {
-                                   String sql3 = String.Format("update stock_store set stock_shop_number = {0}-{1} where stock_shop_name = '{2}' ",stock_number,num2,shop_name);    
-                                   MySqlCommand comm3 = new MySqlCommand(sql3,conn);
-                                   int num =   comm3.ExecuteNonQuery();
-                                   if (num>0)
-                                   {
-                                      String sql5 = String.Format("update outbound set outbound_shop_number = {0}-{1} where outbound_shop_name = {2}",shop_number,num2,shop_name);
-                                      MySqlCommand comm5= new MySqlCommand(sql5,conn);
-                                      int num5 =     comm5.ExecuteNonQuery();
-                                      if (num5>0)
-                                      {
-                                          MessageBox.Show("该订单提交成功");
-                                      }
-                                      else
-                                      {
-                                          MessageBox.Show("该订单提交失败");
-                                      }
-                                   }
-                                   else
-                                   {
-                                       MessageBox.Show("订单处理失败");
-                                       // String sql4 = String.Format("update stock_store set stock_number = {0}+{1} where stock_shop_name = '{2}' ",stock_number,shop_number,shop_name);    
-                                       // MySqlCommand comm4 = new MySqlCommand(sql4,conn);
-                                       //  int num4 =   comm4.ExecuteNonQuery();
-                                       //  if (num4>0)
-                                       //  {
-                                       //      
-                                       //  }
-                                       //  else
-                                       //  {
-                                       //      MessageBox.Show("");
-                                       //  }
-                                   }
-                                   
-
+                                    String sql3 =
+                                        String.Format(
+                                            "update stock_store set stock_shop_number = {0}-{1} where stock_shop_name = '{2}' ",
+                                            stock_number, num2, shop_name);
+                                    MySqlCommand comm3 = new MySqlCommand(sql3, conn);
+                                    int num = comm3.ExecuteNonQuery();
+                                    if (num > 0)
+                                    {
+                                        String sql5 = String.Format(
+                                            "update outbound set outbound_shop_number = {0}-{1} where outbound_shop_name = '{2}'",
+                                            shop_number, num2, shop_name);
+                                        MySqlCommand comm5 = new MySqlCommand(sql5, conn);
+                                        int num5 = comm5.ExecuteNonQuery();
+                                        if (num5 > 0)
+                                        {
+                                            MessageBox.Show("该订单提交成功");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("该订单提交失败");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("订单处理失败");
+                                        // String sql4 = String.Format("update stock_store set stock_number = {0}+{1} where stock_shop_name = '{2}' ",stock_number,shop_number,shop_name);    
+                                        // MySqlCommand comm4 = new MySqlCommand(sql4,conn);
+                                        //  int num4 =   comm4.ExecuteNonQuery();
+                                        //  if (num4>0)
+                                        //  {
+                                        //      
+                                        //  }
+                                        //  else
+                                        //  {
+                                        //      MessageBox.Show("");
+                                        //  }
+                                    }
                                 }
                             }
                         }
