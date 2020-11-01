@@ -53,8 +53,6 @@ namespace WindowsFormsApp7
                         Form1.form1.登录ToolStripMenuItem_Click(null,null);
 
                     }
-
-                  
                 }
                 catch (Exception exception)
                 {

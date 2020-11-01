@@ -41,7 +41,7 @@ namespace WindowsFormsApp7
             // 
             // store_register_box1
             // 
-            this.store_register_box1.Location = new System.Drawing.Point(273, 96);
+            this.store_register_box1.Location = new System.Drawing.Point(417, 151);
             this.store_register_box1.Name = "store_register_box1";
             this.store_register_box1.Size = new System.Drawing.Size(122, 21);
             this.store_register_box1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace WindowsFormsApp7
             // 
             // store_register_box2
             // 
-            this.store_register_box2.Location = new System.Drawing.Point(274, 137);
+            this.store_register_box2.Location = new System.Drawing.Point(418, 195);
             this.store_register_box2.Name = "store_register_box2";
             this.store_register_box2.Size = new System.Drawing.Size(121, 21);
             this.store_register_box2.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace WindowsFormsApp7
             // 
             // 店铺注册_button
             // 
-            this.店铺注册_button.Location = new System.Drawing.Point(289, 164);
+            this.店铺注册_button.Location = new System.Drawing.Point(457, 238);
             this.店铺注册_button.Name = "店铺注册_button";
             this.店铺注册_button.Size = new System.Drawing.Size(65, 38);
             this.店铺注册_button.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace WindowsFormsApp7
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (134)));
-            this.label1.Location = new System.Drawing.Point(273, 65);
+            this.label1.Location = new System.Drawing.Point(428, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 31);
             this.label1.TabIndex = 3;
@@ -77,7 +77,7 @@ namespace WindowsFormsApp7
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(230, 96);
+            this.label2.Location = new System.Drawing.Point(374, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 20);
             this.label2.TabIndex = 4;
@@ -86,7 +86,7 @@ namespace WindowsFormsApp7
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(228, 140);
+            this.label3.Location = new System.Drawing.Point(372, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 18);
             this.label3.TabIndex = 5;

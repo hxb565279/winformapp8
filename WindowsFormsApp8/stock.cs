@@ -78,12 +78,13 @@ namespace WindowsFormsApp8
                         dataGridView1.Columns[0].HeaderText = "id";
                         dataGridView1.Columns[1].HeaderText = "商品名";
                         dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[2].HeaderText = "价格";
                         dataGridView1.Columns[3].HeaderText = "数量";
                     }
                     else if (shop_name == "" && shop_price == "" && shop_number != "")
                     {
-                        String sql1 = String.Format("select * from stock_store where stock_shop_number like '%{0}%'",
-                            shop_number);
+                        String sql1 =
+                            "select * from stock_store group by  stock_shop_number having count(*) < number3 ";
                         MySqlCommand comm = new MySqlCommand(sql1, conn);
                         MySqlDataAdapter sda = new MySqlDataAdapter();
                         sda.SelectCommand = comm;
@@ -340,35 +341,39 @@ namespace WindowsFormsApp8
                     if (num3 > 0)
                     {
                         int numbers = Convert.ToInt32(comm1.ExecuteScalar());
-                        if (numbers<5&&numbers>0)
+                        if (numbers < 5 && numbers > 0)
                         {
                             MessageBox.Show(name + "库存仅剩" + numbers.ToString() + "请及时进货");
                         }
                         else
                         {
-                            MessageBox.Show(name + "剩余数量为" + numbers.ToString()); 
+                            MessageBox.Show(name + "剩余数量为" + numbers.ToString());
                         }
-                        String  num2 =   Interaction.InputBox("要删除数量", "删除", "", 3, 3);
-                      int num22 = Convert.ToInt32(num2);
-                      if (num22>=numbers)
-                      {
-                          MessageBox.Show("删除商品数量够多,库存不足");
-                      }
-                      else
-                      {
-                          String sql3 = String.Format("update stock_store set stock_shop_number= '{0}' where stock_shop_name='{1}'",(numbers-num22).ToString(),name);   
-                          MySqlCommand COMM = new MySqlCommand(sql3,conn);
-                          int num4 =    COMM.ExecuteNonQuery();
-                          if (num4 > 0)
-                          {
-                              MessageBox.Show("删除成功");
-                              Form1.form1.库存管理ToolStripMenuItem_Click(null,null);
-                          }
-                          else
-                          {
-                              MessageBox.Show("删除失败");
-                          }
-                      }
+
+                        String num2 = Interaction.InputBox("要删除数量", "删除", "", 3, 3);
+                        int num22 = Convert.ToInt32(num2);
+                        if (num22 >= numbers)
+                        {
+                            MessageBox.Show("删除商品数量够多,库存不足");
+                        }
+                        else
+                        {
+                            String sql3 =
+                                String.Format(
+                                    "update stock_store set stock_shop_number= '{0}' where stock_shop_name='{1}'",
+                                    (numbers - num22).ToString(), name);
+                            MySqlCommand COMM = new MySqlCommand(sql3, conn);
+                            int num4 = COMM.ExecuteNonQuery();
+                            if (num4 > 0)
+                            {
+                                MessageBox.Show("删除成功");
+                                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+                            }
+                            else
+                            {
+                                MessageBox.Show("删除失败");
+                            }
+                        }
                     }
                     else
                     {
@@ -380,6 +385,95 @@ namespace WindowsFormsApp8
             {
                 Console.WriteLine(exception);
                 MessageBox.Show(exception.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void deleteone_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String sql = String.Format("delete from stock_store where stock_id = '{0}'", value);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("删除成功");
+                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "数据库打开失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void updateone_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String value0 = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                String value1 = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                String value2 = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                String sql = String.Format(
+                    "update stock_store set stock_shop_name='{0}',stock_shop_price='{1}',stock_shop_number='{2}'     where stock_id='{3}'", value0,
+                    value1, value2, value);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("修改成功");
+                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "打开数据库失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void add2_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value0 = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String value1 = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                String value2 = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                String value3 = dataGridView1.Rows[index].Cells[3].Value.ToString();
+
+                String sql = String.Format(
+                    "insert into stock_store (stock_id,stock_shop_name,stock_shop_price,stock_shop_number) values('{0}','{1}','{2}','{3}')", value0, value1
+                    , value2, value3);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("插入成功");
+             Form1.form1.库存管理ToolStripMenuItem_Click(null,null);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "数据库打开失败");
             }
             finally
             {
