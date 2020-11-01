@@ -98,36 +98,56 @@ namespace WindowsFormsApp8
                     if (Convert.ToInt32(comm.ExecuteScalar()) > 0)
                     {
                         MessageBox.Show("该用户已存入系统,将更新订单");
-                        String sql6 = String.Format("select id from `c#_store`.user_customer where username = '{0}'",ord_name);
-                        String sql7 = String.Format("select * from `c#_store`.outbound where outbound_shop_name='{0}'",shop_name);
-                        MySqlCommand comm6 = new MySqlCommand(sql6,conn);
-                        MySqlCommand COMM7 = new MySqlCommand(sql7,conn);
+                        String sql6 = String.Format("select id from `c#_store`.user_customer where username = '{0}'",
+                            ord_name);
+                        String sql7 = String.Format("select * from `c#_store`.outbound where outbound_shop_name='{0}'",
+                            shop_name);
+                        MySqlCommand comm6 = new MySqlCommand(sql6, conn);
+                        MySqlCommand COMM7 = new MySqlCommand(sql7, conn);
                         int num6 = comm6.ExecuteNonQuery();
                         int num7 = Convert.ToInt32(COMM7.ExecuteScalar());
                         //该用户的该订单商品存在
-                        if ( num7 > 0)
+                        if (num7 > 0)
                         {
-                          String num =   Interaction.InputBox("添加商品数量", "添加", "", 3, 3);
-                            
-                            String sql8 = String.Format("update `c#_store`.outbound  set outbound_shop_number= outbound_shop_number+ '{0}' ,outbound_data='{1}'",num,DateTime.Now.ToString());
-                            MySqlCommand comm8 = new MySqlCommand(sql8,conn);
-                             int num8 =     comm8.ExecuteNonQuery();
-                             if (num8>0)
-                             {
-                                 MessageBox.Show("更新订单成功");
-                             }
-                             else
-                             {
-                                 MessageBox.Show("更新订单失败");
-                             }
+                            String num = Interaction.InputBox("添加商品数量", "添加", "", 3, 3);
+
+                            String sql8 =
+                                String.Format(
+                                    "update `c#_store`.outbound  set outbound_shop_number= outbound_shop_number+ '{0}' ,outbound_data='{1}'",
+                                    num, DateTime.Now.ToString());
+                            MySqlCommand comm8 = new MySqlCommand(sql8, conn);
+                            int num8 = comm8.ExecuteNonQuery();
+                            if (num8 > 0)
+                            {
+                                MessageBox.Show("更新订单成功");
+                            }
+                            else
+                            {
+                                MessageBox.Show("更新订单失败");
+                            }
                         }
                         else
                         {
-                            
+                            MessageBox.Show("该订单不存在");
+                            String sql10 = String.Format("select id from `c#_store`.user_customer where username = '{0}'",
+                                ord_name);
+                            MySqlCommand comm10 = new MySqlCommand(sql10, conn);
+                            int num10 = Convert.ToInt32(comm10.ExecuteScalar());
+                            String sql9 = String.Format(
+                                "insert into `c#_store`.outbound (outbound_shop_name, outbound_shop_price, outbound_shop_number, outbound_to_person, outbound_to_phone, outbound_to_address, outbound_data, out_user_id) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
+                                shop_name,shop_price,shop_number,person,phone,address,DateTime.Now.ToString(),num10.ToString());
+                            MySqlCommand comm9 = new MySqlCommand(sql9,conn);
+                           int num9 =    comm9.ExecuteNonQuery();
+                           if (num9>0)
+                           {
+                               MessageBox.Show("订单更新成功");
+                           }
+                           else
+                           {
+                               MessageBox.Show("订单更新失败");
+
+                           }
                         }
-
-
-
                     }
                     else
                     {

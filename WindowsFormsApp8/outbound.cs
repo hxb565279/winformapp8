@@ -108,9 +108,34 @@ namespace WindowsFormsApp8
 
         private void deletebutton1_Click(object sender, EventArgs e)
         {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String sql = String.Format("delete from outbound where outbound_id = '{0}'", value);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("删除成功");
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "数据库打开失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
             
             
             
+        }
+
+        private void submit1_Click(object sender, EventArgs e)
+        {
             
         }
     }

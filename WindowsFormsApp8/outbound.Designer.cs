@@ -36,6 +36,7 @@ namespace WindowsFormsApp8
             this.transh = new System.Windows.Forms.Button();
             this.update11 = new System.Windows.Forms.Button();
             this.deletebutton1 = new System.Windows.Forms.Button();
+            this.submit1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +90,22 @@ namespace WindowsFormsApp8
             this.deletebutton1.UseVisualStyleBackColor = true;
             this.deletebutton1.Click += new System.EventHandler(this.deletebutton1_Click);
             // 
+            // submit1
+            // 
+            this.submit1.Location = new System.Drawing.Point(277, 360);
+            this.submit1.Name = "submit1";
+            this.submit1.Size = new System.Drawing.Size(86, 34);
+            this.submit1.TabIndex = 5;
+            this.submit1.Text = "订单提交";
+            this.submit1.UseVisualStyleBackColor = true;
+            this.submit1.Click += new System.EventHandler(this.submit1_Click);
+            // 
             // outbound
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 564);
+            this.Controls.Add(this.submit1);
             this.Controls.Add(this.deletebutton1);
             this.Controls.Add(this.update11);
             this.Controls.Add(this.transh);
@@ -105,6 +117,8 @@ namespace WindowsFormsApp8
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button submit1;
 
         private System.Windows.Forms.Button deletebutton1;
 
