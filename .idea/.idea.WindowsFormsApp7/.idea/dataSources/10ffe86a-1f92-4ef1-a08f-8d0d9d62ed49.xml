@@ -757,178 +757,184 @@ SELECT|sys.sys_config:null
       <ObjectGrants>ALL PRIVILEGES!
 </ObjectGrants>
     </user>
-    <table id="235" parent="2" name="user_customer"/>
-    <table id="236" parent="3" name="manu"/>
-    <table id="237" parent="3" name="outbound"/>
-    <table id="238" parent="3" name="stock_store"/>
+    <table id="235" parent="3" name="manu"/>
+    <table id="236" parent="3" name="outbound"/>
+    <table id="237" parent="3" name="stock_store"/>
+    <table id="238" parent="3" name="user_customer"/>
     <table id="239" parent="3" name="user_store"/>
-    <table id="240" parent="4" name="user_supplier"/>
-    <column id="241" parent="235" name="id">
+    <table id="240" parent="3" name="user_supplier"/>
+    <column id="241" parent="235" name="manu_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="242" parent="235" name="username">
+    <column id="242" parent="235" name="manu_shop_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="243" parent="235" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="244" parent="236" name="manu_id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="245" parent="236" name="manu_shop_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="246" parent="236" name="manu_shop_price">
+    <column id="243" parent="235" name="manu_shop_price">
       <Position>3</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
     </column>
-    <column id="247" parent="236" name="manu_shop_number">
+    <column id="244" parent="235" name="manu_shop_number">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="248" parent="236" name="manu_re_person">
+    <column id="245" parent="235" name="manu_re_person">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="249" parent="236" name="manu_re_phone">
+    <column id="246" parent="235" name="manu_re_phone">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="250" parent="236" name="manu_re_address">
+    <column id="247" parent="235" name="manu_re_address">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="251" parent="236" name="manu_out_user">
+    <column id="248" parent="235" name="manu_data">
       <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="249" parent="235" name="manu_out_user">
+      <Position>9</Position>
       <DataType>int(255)|0s</DataType>
     </column>
-    <index id="252" parent="236" name="manu_out_user">
+    <index id="250" parent="235" name="manu_out_user">
       <ColNames>manu_out_user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="253" parent="236" name="PRIMARY">
+    <key id="251" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>manu_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="254" parent="236" name="manu_ibfk_1">
+    <foreign-key id="252" parent="235" name="manu_ibfk_1">
       <ColNames>manu_out_user</ColNames>
-      <RefSchemaName>c#_customer</RefSchemaName>
-      <RefTableName>user_customer</RefTableName>
+      <RefTableName>user_supplier</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="255" parent="237" name="outbound_id">
+    <column id="253" parent="236" name="outbound_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="256" parent="237" name="outbound_shop_name">
+    <column id="254" parent="236" name="outbound_shop_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="257" parent="237" name="outbound_shop_price">
+    <column id="255" parent="236" name="outbound_shop_price">
       <Position>3</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
     </column>
-    <column id="258" parent="237" name="outbound_shop_number">
+    <column id="256" parent="236" name="outbound_shop_number">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="259" parent="237" name="outbound_to_person">
+    <column id="257" parent="236" name="outbound_to_person">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="260" parent="237" name="outbound_to_phone">
+    <column id="258" parent="236" name="outbound_to_phone">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="261" parent="237" name="outbound_to_address">
+    <column id="259" parent="236" name="outbound_to_address">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="262" parent="237" name="out_user">
+    <column id="260" parent="236" name="outbound_data">
       <Position>8</Position>
-      <DataType>int(255)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="263" parent="237" name="out_user">
-      <ColNames>out_user</ColNames>
+    <column id="261" parent="236" name="out_user_id">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="262" parent="236" name="out_user_id">
+      <ColNames>out_user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="264" parent="237" name="PRIMARY">
+    <key id="263" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>outbound_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="265" parent="237" name="outbound_ibfk_1">
-      <ColNames>out_user</ColNames>
-      <RefSchemaName>c#_supplier</RefSchemaName>
-      <RefTableName>user_supplier</RefTableName>
+    <foreign-key id="264" parent="236" name="outbound_ibfk_1">
+      <ColNames>out_user_id</ColNames>
+      <RefTableName>user_customer</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="266" parent="238" name="stock_id">
+    <column id="265" parent="237" name="stock_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="267" parent="238" name="stock_shop_name">
+    <column id="266" parent="237" name="stock_shop_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="268" parent="238" name="stock_shop_price">
+    <column id="267" parent="237" name="stock_shop_price">
       <Position>3</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
     </column>
-    <column id="269" parent="238" name="stock_shop_number">
+    <column id="268" parent="237" name="stock_shop_number">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="270" parent="238" name="PRIMARY">
+    <key id="269" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>stock_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="271" parent="239" name="id">
+    <column id="270" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="272" parent="239" name="username">
+    <column id="271" parent="238" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="273" parent="239" name="password">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <key id="274" parent="239" name="PRIMARY">
+    <key id="272" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="275" parent="240" name="id">
+    <column id="273" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="276" parent="240" name="username">
+    <column id="274" parent="239" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="277" parent="240" name="PRIMARY">
+    <column id="275" parent="239" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="276" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="277" parent="240" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="278" parent="240" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="279" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

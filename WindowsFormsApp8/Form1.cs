@@ -22,10 +22,28 @@ namespace WindowsFormsApp8
 
         private void 入货单ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            manu manu = new manu();
+            manu.MdiParent = this;
+            manu.FormBorderStyle = FormBorderStyle.None;
+            manu.Dock = DockStyle.Fill;
+            manu.Show();
         }
 
         private void 出货单ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            outbound outbound = new outbound();
+            outbound.MdiParent = this;
+            outbound.FormBorderStyle = FormBorderStyle.None;
+            outbound.Dock = DockStyle.Fill;
+            outbound.Show();
         }
 
         public void 库存管理ToolStripMenuItem_Click(object sender, EventArgs e)
