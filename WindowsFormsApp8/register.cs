@@ -54,12 +54,17 @@ namespace WindowsFormsApp8
                     if (Convert.ToInt32( comm1.ExecuteScalar())>0)
                     {
                         MessageBox.Show("账号已经注册,请登录");
+                        login l = new login();
+                        l.Show();
+                        this.Hide();
                     }
                     else
                     {
                         comm2.ExecuteNonQuery();
                         MessageBox.Show("注册成功");
-
+                         login l = new login();
+                         l.Show();
+                         this.Hide();
                     }
                 }
                 catch (Exception exception)

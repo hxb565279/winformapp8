@@ -65,6 +65,8 @@ namespace WindowsFormsApp8
                              form1.username = username;
                                 MessageBox.Show("登录成功");
                                 this.Close();
+                                form1.Show();
+                                
                             }
                             else
                             {
@@ -76,7 +78,9 @@ namespace WindowsFormsApp8
                     else
                     {
                         MessageBox.Show("账户不存在,请注册");
-                        Form1.form1.注册ToolStripMenuItem_Click(null,null);
+                        register r = new register();
+                        r.Show(); 
+                        this.Hide();
                     }
                 }
                 catch (Exception exception)

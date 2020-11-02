@@ -16,3 +16,5 @@ D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\Windo
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.manu.resources
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.outbound.resources
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.create1.resources
+D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.login.resources
+D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.register.resources

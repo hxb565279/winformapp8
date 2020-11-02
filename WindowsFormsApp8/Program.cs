@@ -17,7 +17,7 @@ namespace WindowsFormsApp8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new store_login());
+            Application.Run(new login());
         }
     }
 }
