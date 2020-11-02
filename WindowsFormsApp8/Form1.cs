@@ -14,10 +14,21 @@ namespace WindowsFormsApp8
     public partial class Form1 : Form
     {
         public  static Form1 form1;
+        public String username;
+
+        public Form1(string username)
+        {
+            this.username = username;
+        }
+
         public Form1()
         {
-            form1 = this;
-            InitializeComponent();
+            form1 = this; 
+       
+            InitializeComponent();   
+            String username = form1.username;
+            Text = "管理系统,欢迎   " + username+"  管理员";
+         
         }
 
         private void 入货单ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,5 +101,19 @@ namespace WindowsFormsApp8
             storeRegister.Show();
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+     
+         
+        }
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+     
+         
+        }
+
+
+       
     }
 }

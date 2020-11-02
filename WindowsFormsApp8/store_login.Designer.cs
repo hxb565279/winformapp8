@@ -105,7 +105,7 @@ namespace WindowsFormsApp7
             this.Controls.Add(this.store_login2);
             this.Controls.Add(this.store_login1);
             this.Name = "store_login";
-            this.Text = "store_login";
+            this.Text = "店铺登录";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

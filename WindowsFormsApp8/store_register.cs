@@ -37,9 +37,9 @@ namespace WindowsFormsApp7
                 try
                 {
                     conn.Open();
-                    String  sql1 = String.Format("select * from user_store where username= '{0}'",username);
+                    String  sql1 = String.Format("select * from `c#_store`.user_store where username= '{0}'",username);
                     MySqlCommand comm1 = new MySqlCommand(sql1,conn);
-                    String sql2=  String.Format("insert into user_store (username,password) values ('{0}','{1}')",username,password);
+                    String sql2=  String.Format("insert into `c#_store`.user_store (username,password) values ('{0}','{1}')",username,password);
                     MySqlCommand comm2 = new MySqlCommand(sql2,conn);
                     if (Convert.ToInt32( comm1.ExecuteScalar())>0)
                     {

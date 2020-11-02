@@ -13,6 +13,9 @@ namespace WindowsFormsApp8
         {
             InitializeComponent();
             @select();
+            selectall();
+        String   username=        Form1.form1.username;
+        MessageBox.Show(username);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -265,6 +268,51 @@ namespace WindowsFormsApp8
             {
                 conn.Close();
             }
+        }
+
+        public void selectall()
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                String sql11 = String.Format("select *  from stock_store");
+                MySqlCommand comm11 = new MySqlCommand(sql11, conn);
+                MySqlDataAdapter sda11 = new MySqlDataAdapter();
+                sda11.SelectCommand = comm11;
+                //数据集
+                DataSet ds11 = new DataSet();
+                sda11.Fill(ds11, "stock_store");
+                dataGridView2.DataSource = ds11.Tables[0];
+                dataGridView2.Columns[0].HeaderText = "id";
+                dataGridView2.Columns[1].HeaderText = "商品名";
+                dataGridView2.Columns[2].HeaderText = "价格";
+                dataGridView2.Columns[3].HeaderText = "数量";
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

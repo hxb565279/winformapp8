@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp8;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp7
 {
     public partial class store_login : Form
     {
+      
         public store_login()
         {
             InitializeComponent();
         }
-
         private void store_login1_TextChanged(object sender, EventArgs e)
         {
             
@@ -36,11 +37,11 @@ namespace WindowsFormsApp7
                 try
                 {
                     conn.Open();
-                    String sql1 = String.Format("select * from user_store where username= '{0}' ", username);
+                    String sql1 = String.Format("select * from `c#_store`.user_store where username= '{0}' ", username);
                     MySqlCommand comm2 = new MySqlCommand(sql1, conn);
                     if (Convert.ToInt32(comm2.ExecuteScalar()) > 0)
                     {
-                        String sql = String.Format("select username,password from user_store   where username = '{0}' limit 1",
+                        String sql = String.Format("select username,password from `c#_store`.user_store   where username = '{0}' limit 1",
                             username);
                         MySqlCommand comm1 = new MySqlCommand(sql, conn);
                         MySqlDataReader reader = comm1.ExecuteReader();
@@ -50,7 +51,10 @@ namespace WindowsFormsApp7
                             String password1 = reader[1].ToString();
                             if (username1 != null && password.Equals(password1))
                             {
+                             Form1 form1 = new Form1();
+                             form1.username = username;
                                 MessageBox.Show("登录成功");
+                                this.Close();
                             }
                             else
                             {
@@ -62,6 +66,7 @@ namespace WindowsFormsApp7
                     else
                     {
                         MessageBox.Show("账户不存在,请注册");
+                        Form1.form1.注册ToolStripMenuItem_Click(null,null);
                     }
                 }
                 catch (Exception exception)

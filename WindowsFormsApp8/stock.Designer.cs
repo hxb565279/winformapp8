@@ -172,7 +172,7 @@ namespace WindowsFormsApp8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 517);
+            this.ClientSize = new System.Drawing.Size(1084, 664);
             this.Controls.Add(this.add2);
             this.Controls.Add(this.updateone);
             this.Controls.Add(this.deleteone);
