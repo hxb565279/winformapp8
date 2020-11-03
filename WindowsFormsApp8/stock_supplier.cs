@@ -122,7 +122,6 @@ namespace WindowsFormsApp8
                                 String.Format(
                                     "insert into `c#_store`.stock_supplier (`c#_store`.stock_supplier.supplier_shop_name,`c#_store`.stock_supplier.supplier_shop_price,`c#_store`.stock_supplier.supplier_shop_number) values ('{0}','{1}','{2}')",
                                     shop_name, shop_price2, shop_number2);
-
                             MySqlCommand comm = new MySqlCommand(sql, conn);
                             int num = comm.ExecuteNonQuery();
                             if (num > 0)
