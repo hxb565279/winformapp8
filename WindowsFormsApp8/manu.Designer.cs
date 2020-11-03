@@ -35,6 +35,10 @@ namespace WindowsFormsApp8
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.addbutton = new System.Windows.Forms.Button();
+            this.refrash = new System.Windows.Forms.Button();
+            this.sumbit1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +59,7 @@ namespace WindowsFormsApp8
             this.dataGridView3.Location = new System.Drawing.Point(1, 244);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(763, 223);
+            this.dataGridView3.Size = new System.Drawing.Size(938, 223);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -79,21 +83,74 @@ namespace WindowsFormsApp8
             this.label2.Text = "订单";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // addbutton
+            // 
+            this.addbutton.Location = new System.Drawing.Point(54, 491);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(111, 40);
+            this.addbutton.TabIndex = 4;
+            this.addbutton.Text = "添加订单";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.addbutton_Click);
+            // 
+            // refrash
+            // 
+            this.refrash.Location = new System.Drawing.Point(234, 490);
+            this.refrash.Name = "refrash";
+            this.refrash.Size = new System.Drawing.Size(67, 40);
+            this.refrash.TabIndex = 5;
+            this.refrash.Text = "刷新";
+            this.refrash.UseVisualStyleBackColor = true;
+            this.refrash.Click += new System.EventHandler(this.refrash_Click);
+            // 
+            // sumbit1
+            // 
+            this.sumbit1.Location = new System.Drawing.Point(331, 491);
+            this.sumbit1.Name = "sumbit1";
+            this.sumbit1.Size = new System.Drawing.Size(78, 40);
+            this.sumbit1.TabIndex = 6;
+            this.sumbit1.Text = "提交订单";
+            this.sumbit1.UseVisualStyleBackColor = true;
+            this.sumbit1.Click += new System.EventHandler(this.sumbit1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(448, 490);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 35);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "删除选中一行";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // manu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 664);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sumbit1);
+            this.Controls.Add(this.refrash);
+            this.Controls.Add(this.addbutton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Name = "manu";
             this.Text = "入库单";
+            this.Load += new System.EventHandler(this.manu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button button1;
+
+        private System.Windows.Forms.Button sumbit1;
+
+        private System.Windows.Forms.Button refrash;
+
+        private System.Windows.Forms.Button addbutton;
 
         private System.Windows.Forms.Label label2;
 

@@ -176,5 +176,217 @@ namespace WindowsFormsApp8
                 conn.Close();
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void shop_name_box_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void shop_price_box_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void shop_number_box_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String shop_name = this.shop_name_box.Text;
+            String shop_price = this.shop_price_box.Text;
+            String shop_number = this.shop_number_box.Text;
+             Database2 db = new Database2();
+
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                if (shop_name == "" && shop_price == "" && shop_number == "")
+                {
+                    MessageBox.Show("填入信息为空");
+                }
+                else
+                {
+                    if (shop_name != "" && shop_price == "" && shop_number == "")
+                    {
+                        String sql1 = String.Format("select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name like '%{0}%'",
+                            shop_name);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else if (shop_name == "" && shop_price != "" && shop_number == "")
+                    {
+                        String sql1 = String.Format("select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_price like '%{0}%'",
+                            shop_price);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else if (shop_name == "" && shop_price == "" && shop_number != "")
+                    {
+                        String sql1 =
+                          Strings.Format(  "select * from `c#_store`.stock_supplier group by  `c#_store`.stock_supplier.supplier_shop_number having count(*) < '{0}' ",shop_number);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else if (shop_name != "" && shop_price != "" && shop_number == "")
+                    {
+                        String sql1 =
+                            String.Format(
+                                "select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name like '%{0}%' and `c#_store`.stock_supplier.supplier_shop_price like  '%{1}%'",
+                                shop_name, shop_price);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else if (shop_name != "" && shop_price == "" && shop_number != "")
+                    {
+                        String sql1 =
+                            String.Format(
+                                "select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name like '%{0}%' and `c#_store`.stock_supplier.supplier_shop_number like  '%{1}%'",
+                                shop_name, shop_number);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else if (shop_name == "" && shop_price != "" && shop_number != "")
+                    {
+                        String sql1 =
+                            String.Format(
+                                "select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name like '%{0}%' and `c#_store`.stock_supplier.supplier_shop_price like '%{1}%'",
+                                shop_name, shop_price);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                    else
+                    {
+                        String sql1 =
+                            String.Format(
+                                "select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name like '%{0}%' and `c#_store`.stock_supplier.supplier_shop_price  like '%{1}%' and `c#_store`.stock_supplier.supplier_shop_number like '%{2}%'",
+                                shop_name, shop_price, shop_number);
+                        MySqlCommand comm = new MySqlCommand(sql1, conn);
+                        MySqlDataAdapter sda = new MySqlDataAdapter();
+                        sda.SelectCommand = comm;
+                        //数据集
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds, "stock_supplier");
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns[0].HeaderText = "id";
+                        dataGridView1.Columns[1].HeaderText = "商品名";
+                        dataGridView1.Columns[2].HeaderText = "价格";
+                        dataGridView1.Columns[3].HeaderText = "数量";
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String value0 = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                String value1 = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                String value2 = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                String sql = String.Format(
+                    "update `c#_store`.stock_supplier set `c#_store`.stock_supplier.supplier_shop_name='{0}',`c#_store`.stock_supplier.supplier_shop_price='{1}',`c#_store`.stock_supplier.supplier_shop_number='{2}'     where `c#_store`.stock_supplier.stock_supplier_id='{3}'", value0,
+                    value1, value2, value);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("修改成功");
+                selectall();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "打开数据库失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
