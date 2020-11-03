@@ -23,11 +23,10 @@ namespace WindowsFormsApp8
 
         public Form1()
         {
-            form1 = this; 
-       
+            form1 = this;
             InitializeComponent();   
             String username = form1.username;
-            Text = "管理系统,欢迎   " + username+"  管理员";
+            Text = "管理系统,欢迎" + username+"管理员";
          
         }
 
@@ -114,6 +113,49 @@ namespace WindowsFormsApp8
         }
 
 
-       
+        private void 库存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            stock_supplier stockSupplier = new stock_supplier();
+            stockSupplier.MdiParent = this;
+            stockSupplier.FormBorderStyle = FormBorderStyle.None;
+            stockSupplier.Dock = DockStyle.Fill;
+            stockSupplier.Show();
+        }
+
+        private void 入库日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        }
+
+        private void 出库日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        }
+
+        private void 登录日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        }
+
+        private void 财务明细ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        }
     }
 }

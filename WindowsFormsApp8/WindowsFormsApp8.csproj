@@ -96,6 +96,12 @@
         <Compile Include="stock.Designer.cs">
           <DependentUpon>stock.cs</DependentUpon>
         </Compile>
+        <Compile Include="stock_supplier.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="stock_supplier.Designer.cs">
+          <DependentUpon>stock_supplier.cs</DependentUpon>
+        </Compile>
         <Compile Include="store_login.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -137,6 +143,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="stock.resx">
           <DependentUpon>stock.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="stock_supplier.resx">
+          <DependentUpon>stock_supplier.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="store_login.resx">
           <DependentUpon>store_login.cs</DependentUpon>

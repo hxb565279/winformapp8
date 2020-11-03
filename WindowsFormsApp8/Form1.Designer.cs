@@ -39,12 +39,20 @@
             this.出货单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.店铺管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.库存管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.供应商库存信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.库存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.入库日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.出库日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.登录日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.财务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.财务明细ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.首选项ToolStripMenuItem, this.货单ToolStripMenuItem, this.店铺管理ToolStripMenuItem});
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.首选项ToolStripMenuItem, this.货单ToolStripMenuItem, this.店铺管理ToolStripMenuItem, this.供应商库存信息ToolStripMenuItem, this.日志ToolStripMenuItem, this.财务ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 25);
@@ -114,6 +122,62 @@
             this.库存管理ToolStripMenuItem.Text = "库存管理";
             this.库存管理ToolStripMenuItem.Click += new System.EventHandler(this.库存管理ToolStripMenuItem_Click);
             // 
+            // 供应商库存信息ToolStripMenuItem
+            // 
+            this.供应商库存信息ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.库存ToolStripMenuItem});
+            this.供应商库存信息ToolStripMenuItem.Name = "供应商库存信息ToolStripMenuItem";
+            this.供应商库存信息ToolStripMenuItem.Size = new System.Drawing.Size(104, 21);
+            this.供应商库存信息ToolStripMenuItem.Text = "供应商库存信息";
+            // 
+            // 库存ToolStripMenuItem
+            // 
+            this.库存ToolStripMenuItem.Name = "库存ToolStripMenuItem";
+            this.库存ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.库存ToolStripMenuItem.Text = "库存";
+            this.库存ToolStripMenuItem.Click += new System.EventHandler(this.库存ToolStripMenuItem_Click);
+            // 
+            // 日志ToolStripMenuItem
+            // 
+            this.日志ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.入库日志ToolStripMenuItem, this.出库日志ToolStripMenuItem, this.登录日志ToolStripMenuItem});
+            this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
+            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.日志ToolStripMenuItem.Text = "日志";
+            // 
+            // 入库日志ToolStripMenuItem
+            // 
+            this.入库日志ToolStripMenuItem.Name = "入库日志ToolStripMenuItem";
+            this.入库日志ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.入库日志ToolStripMenuItem.Text = "入库日志";
+            this.入库日志ToolStripMenuItem.Click += new System.EventHandler(this.入库日志ToolStripMenuItem_Click);
+            // 
+            // 出库日志ToolStripMenuItem
+            // 
+            this.出库日志ToolStripMenuItem.Name = "出库日志ToolStripMenuItem";
+            this.出库日志ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.出库日志ToolStripMenuItem.Text = "出库日志";
+            this.出库日志ToolStripMenuItem.Click += new System.EventHandler(this.出库日志ToolStripMenuItem_Click);
+            // 
+            // 登录日志ToolStripMenuItem
+            // 
+            this.登录日志ToolStripMenuItem.Name = "登录日志ToolStripMenuItem";
+            this.登录日志ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.登录日志ToolStripMenuItem.Text = "登录日志";
+            this.登录日志ToolStripMenuItem.Click += new System.EventHandler(this.登录日志ToolStripMenuItem_Click);
+            // 
+            // 财务ToolStripMenuItem
+            // 
+            this.财务ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.财务明细ToolStripMenuItem});
+            this.财务ToolStripMenuItem.Name = "财务ToolStripMenuItem";
+            this.财务ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.财务ToolStripMenuItem.Text = "财务";
+            // 
+            // 财务明细ToolStripMenuItem
+            // 
+            this.财务明细ToolStripMenuItem.Name = "财务明细ToolStripMenuItem";
+            this.财务明细ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.财务明细ToolStripMenuItem.Text = "财务明细";
+            this.财务明细ToolStripMenuItem.Click += new System.EventHandler(this.财务明细ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -130,6 +194,15 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem 财务ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 财务明细ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 出库日志ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 登录日志ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 供应商库存信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 库存ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 日志ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 入库日志ToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem 登录ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关闭ToolStripMenuItem;

@@ -64,7 +64,7 @@ namespace WindowsFormsApp8
                              Form1 form1 = new Form1();
                              form1.username = username;
                                 MessageBox.Show("登录成功");
-                                this.Close();
+                                this.Hide();
                                 form1.Show();
                                 
                             }
@@ -93,6 +93,13 @@ namespace WindowsFormsApp8
                     conn.Close();
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            register r= new register();
+            this.Hide();
+            r.Show();
         }
     }
 }

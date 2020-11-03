@@ -15,7 +15,7 @@ namespace WindowsFormsApp8
             @select();
             selectall();
         String   username=        Form1.form1.username;
-        MessageBox.Show(username);
+        MessageBox.Show("欢迎管理员"+username);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
