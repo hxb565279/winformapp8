@@ -100,7 +100,7 @@ namespace WindowsFormsApp8
                             if (num1 > 0)
                             {
                                 MessageBox.Show("插入成功");
-                                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+                                selectall();
                             }
                             else
                             {
@@ -127,7 +127,7 @@ namespace WindowsFormsApp8
                             if (num > 0)
                             {
                                 MessageBox.Show("插入成功");
-                                Form1.form1.库存管理ToolStripMenuItem_Click(null, null);
+                               selectall();
                             }
                             else
                             {
@@ -141,6 +141,35 @@ namespace WindowsFormsApp8
             {
                 Console.WriteLine(exception);
                 MessageBox.Show(exception.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+     
+
+
+        private void deleteone_Click(object sender, EventArgs e)
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                int index = dataGridView1.CurrentRow.Index;
+                String value = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                String sql = String.Format("delete from `c#_store`.stock_supplier where `c#_store`.stock_supplier.stock_supplier_id= '{0}'", value);
+                MySqlCommand comm = new MySqlCommand(sql, conn);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("删除成功");
+                selectall();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.Message.ToString() + "数据库打开失败");
             }
             finally
             {

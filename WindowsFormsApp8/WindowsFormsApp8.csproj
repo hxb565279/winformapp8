@@ -57,6 +57,12 @@
         <Compile Include="create1.Designer.cs">
           <DependentUpon>create1.cs</DependentUpon>
         </Compile>
+        <Compile Include="create2.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="create2.Designer.cs">
+          <DependentUpon>create2.cs</DependentUpon>
+        </Compile>
         <Compile Include="Database2.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
@@ -116,6 +122,9 @@
         </Compile>
         <EmbeddedResource Include="create1.resx">
           <DependentUpon>create1.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="create2.resx">
+          <DependentUpon>create2.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>

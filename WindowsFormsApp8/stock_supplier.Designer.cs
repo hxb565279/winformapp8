@@ -33,6 +33,7 @@ namespace WindowsFormsApp8
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.add1 = new System.Windows.Forms.Button();
+            this.deleteone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,22 @@ namespace WindowsFormsApp8
             this.add1.UseVisualStyleBackColor = true;
             this.add1.Click += new System.EventHandler(this.add1_Click);
             // 
+            // deleteone
+            // 
+            this.deleteone.Location = new System.Drawing.Point(243, 460);
+            this.deleteone.Name = "deleteone";
+            this.deleteone.Size = new System.Drawing.Size(93, 36);
+            this.deleteone.TabIndex = 2;
+            this.deleteone.Text = "删除选中一行";
+            this.deleteone.UseVisualStyleBackColor = true;
+            this.deleteone.Click += new System.EventHandler(this.deleteone_Click);
+            // 
             // stock_supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 664);
+            this.Controls.Add(this.deleteone);
             this.Controls.Add(this.add1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "stock_supplier";
@@ -68,6 +80,8 @@ namespace WindowsFormsApp8
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button deleteone;
 
         private System.Windows.Forms.Button add1;
 
