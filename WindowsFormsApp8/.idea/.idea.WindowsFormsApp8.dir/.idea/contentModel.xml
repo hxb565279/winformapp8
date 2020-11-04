@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\和学博\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\和学博\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\和学博\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\和学博\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8" t="IncludeRecursive">
+      <e p="App.config" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="create1.cs" t="Include" />
+      <e p="create1.Designer.cs" t="Include" />
+      <e p="create1.resx" t="Include" />
+      <e p="create2.cs" t="Include" />
+      <e p="create2.Designer.cs" t="Include" />
+      <e p="create2.resx" t="Include" />
+      <e p="Database2.cs" t="Include" />
+      <e p="db" t="Include">
+        <e p="c#_store.sql" t="Include" />
+      </e>
+      <e p="Form1.cs" t="Include" />
+      <e p="Form1.Designer.cs" t="Include" />
+      <e p="Form1.resx" t="Include" />
+      <e p="login.cs" t="Include" />
+      <e p="login.Designer.cs" t="Include" />
+      <e p="login.resx" t="Include" />
+      <e p="login_sql.cs" t="Include" />
+      <e p="login_sql.Designer.cs" t="Include" />
+      <e p="login_sql.resx" t="Include" />
+      <e p="manu.cs" t="Include" />
+      <e p="manu.Designer.cs" t="Include" />
+      <e p="manu.resx" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="outbound.cs" t="Include" />
+      <e p="outbound.Designer.cs" t="Include" />
+      <e p="outbound.resx" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.cs" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="register.cs" t="Include" />
+      <e p="register.Designer.cs" t="Include" />
+      <e p="register.resx" t="Include" />
+      <e p="stock.cs" t="Include" />
+      <e p="stock.Designer.cs" t="Include" />
+      <e p="stock.resx" t="Include" />
+      <e p="stock_supplier.cs" t="Include" />
+      <e p="stock_supplier.Designer.cs" t="Include" />
+      <e p="stock_supplier.resx" t="Include" />
+      <e p="store_login.cs" t="Include" />
+      <e p="store_login.Designer.cs" t="Include" />
+      <e p="store_login.resx" t="Include" />
+      <e p="store_register.cs" t="Include" />
+      <e p="store_register.Designer.cs" t="Include" />
+      <e p="store_register.resx" t="Include" />
+      <e p="WindowsFormsApp8.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>

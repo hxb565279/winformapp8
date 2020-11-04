@@ -53,6 +53,7 @@ namespace WindowsFormsApp8
                     {
                         String sql = String.Format("select username,password from `c#_store`.user_store   where username = '{0}' limit 1",
                             username);
+                        
                         MySqlCommand comm1 = new MySqlCommand(sql, conn);
                         MySqlDataReader reader = comm1.ExecuteReader();
                         while (reader.Read())
@@ -61,15 +62,17 @@ namespace WindowsFormsApp8
                             String password1 = reader[1].ToString();
                             if (username1 != null && password.Equals(password1))
                             {
+                                // db.insert(sql);
                              Form1 form1 = new Form1();
                              form1.username = username;
+                             db.insert("登录成功");
                                 MessageBox.Show("登录成功");
                                 this.Hide();
                                 form1.Show();
-                                
                             }
                             else
                             {
+                                db.insert("登录失败");
                                 MessageBox.Show("密码错误,请重新输入");
                             }
                         }

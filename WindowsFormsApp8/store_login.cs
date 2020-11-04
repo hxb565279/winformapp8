@@ -53,11 +53,13 @@ namespace WindowsFormsApp7
                             {
                              Form1 form1 = new Form1();
                              form1.username = username;
+                             db.insert("登录成功");
                                 MessageBox.Show("登录成功");
                                 this.Close();
                             }
                             else
                             {
+                                db.insert("密码错误，重新输入");
                                 MessageBox.Show("密码错误,请重新输入");
                             }
                         }

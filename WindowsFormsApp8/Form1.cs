@@ -26,7 +26,7 @@ namespace WindowsFormsApp8
             form1 = this;
             InitializeComponent();   
             String username = form1.username;
-            Text = "管理系统,欢迎" + username+"管理员";
+            Text = "管理系统,欢迎 " + username+"管理员";
          
         }
 
@@ -148,6 +148,11 @@ namespace WindowsFormsApp8
             {
                 form.Close();
             }
+            login_sql loginSql = new login_sql();
+            loginSql.MdiParent = this;
+            loginSql.FormBorderStyle = FormBorderStyle.None;
+            loginSql.Dock = DockStyle.Fill;
+            loginSql.Show();
         }
 
         private void 财务明细ToolStripMenuItem_Click(object sender, EventArgs e)

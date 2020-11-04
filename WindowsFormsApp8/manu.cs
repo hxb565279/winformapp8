@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using WindowsFormsApp7;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp8
@@ -13,6 +14,8 @@ namespace WindowsFormsApp8
             InitializeComponent();
             selectall2();
             selectall3();
+            String   username=        Form1.form1.username;
+            MessageBox.Show("欢迎管理员"+username);
         }
 
         public void selectall2()
@@ -137,12 +140,21 @@ namespace WindowsFormsApp8
                         String shop_name = ds.Tables[0].Rows[0]["manu_shop_name"].ToString().Trim();
                         String shop_price = ds.Tables[0].Rows[0]["manu_shop_price"].ToString().Trim();
                         String shop_number = ds.Tables[0].Rows[0]["manu_shop_number"].ToString().Trim();
+                        String sql21= String.Format("select * from `c#_store`.stock_store where stock_shop_name = '{0}'",shop_name);
+                        MySqlCommand comm_21 = new MySqlCommand(sql21,conn);
+                        MySqlDataAdapter SDA2 = new MySqlDataAdapter();
+                        SDA2.SelectCommand = comm_21;
+                        DataSet ds2= new DataSet();
+                        SDA2.Fill(ds2, "stock_store");
+                        String stock_store_shop_number = ds2.Tables[0].Rows[0]["stock_shop_number"].ToString().Trim();
+
+
                         String stock_supplier_shop_name =
                             String.Format(
                                 "select * from `c#_store`.stock_supplier where `c#_store`.stock_supplier.supplier_shop_name='{0}'",
                                 shop_name);
                         MySqlCommand comm_supplier = new MySqlCommand(stock_supplier_shop_name, conn);
-                      
+
                         if (Convert.ToInt32(comm_supplier.ExecuteScalar()) > 0)
                         {
                             MySqlDataAdapter sda1 = new MySqlDataAdapter();
@@ -156,7 +168,7 @@ namespace WindowsFormsApp8
                                 String shop_number_sql1 =
                                     String.Format(
                                         "update `c#_store`.stock_supplier set `c#_store`.stock_supplier.supplier_shop_number= {0}-{1} where supplier_shop_name ='{2}'",
-                                        supplier_shop_number, shop_number,shop_name);
+                                        supplier_shop_number, shop_number, shop_name);
                                 MySqlCommand comm2 = new MySqlCommand(shop_number_sql1, conn);
                                 if (comm2.ExecuteNonQuery() > 0)
                                 {
@@ -179,8 +191,9 @@ namespace WindowsFormsApp8
                                         sda.Fill(ds10, "stock_store");
                                         String number = ds10.Tables[0].Rows[0]["stock_shop_number"].ToString().Trim();
                                         String update_sql = String.Format(
-                                            "update `c#_store`.stock_store  set  stock_shop_number={0}+{1} where stock_shop_name='{2}'", number,
-                                            shop_number,shop_name);
+                                            "update `c#_store`.stock_store  set  stock_shop_number={0}+{1} where stock_shop_name='{2}'",
+                                            number,
+                                            shop_number, shop_name);
                                         MySqlCommand comm_update_sql = new MySqlCommand(update_sql, conn);
                                         int num5 = comm_update_sql.ExecuteNonQuery();
                                         if (num5 > 0)
@@ -246,7 +259,118 @@ namespace WindowsFormsApp8
                             }
                             else
                             {
-                                MessageBox.Show("该订单库存不足,是否需求剩余订单");
+                                MessageBox.Show("该订单库存不足,是否需求剩余订单,请输入请求数量");
+                                String manu_number1 = Interaction.InputBox("输入的 请求数量", "请求数量", "", 3, 3);
+                                if (Convert.ToInt32(manu_number1) <= Convert.ToInt32(supplier_shop_number))
+                                {
+                                    String manu_sql11 =
+                                        String.Format(
+                                            "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}-{1} where supplier_shop_name = '{2}'",
+                                            supplier_shop_number, manu_number1, shop_name);
+                                    MySqlCommand comm_manu = new MySqlCommand(manu_sql11, conn);
+                                    int manu_num1 = comm_manu.ExecuteNonQuery();
+                                    if (manu_num1 > 0)
+                                    {
+                                        MessageBox.Show("供应商库存更改成功");
+                                        String manu_sql13 = String.Format(
+                                            "select * from  `c#_store`.stock_store where stock_shop_name = '{0}' ",
+                                            shop_name);
+                                        MySqlCommand comm_manu_sql13 = new MySqlCommand(manu_sql13, conn);
+                                        int manu_sql13_num = Convert.ToInt32(comm_manu_sql13.ExecuteScalar());
+                                        if (manu_sql13_num > 0)
+                                        {
+                                            String manu_sql_18 = String.Format(
+                                                "update  `c#_store`.stock_store  set stock_shop_number = '{0}'+'{1}' where stock_shop_name='{2}'",
+                                                manu_number1, stock_store_shop_number, shop_name);
+                                            MySqlCommand comm_sql_18 = new MySqlCommand(manu_sql_18, conn);
+                                            int num18 = comm_sql_18.ExecuteNonQuery();
+                                            if (num18 > 0)
+                                            {
+                                                String manu_sql_19_sql = String.Format(
+                                                    "delete from `c#_store`.manu where manu_shop_name = '{0}'",
+                                                    shop_name);
+                                                MySqlCommand manu_sql_19 = new MySqlCommand(manu_sql_19_sql, conn);
+                                                int manu_sql_15_15_num1 = manu_sql_19.ExecuteNonQuery();
+                                                if (manu_sql_15_15_num1 > 0)
+                                                {
+                                                    MessageBox.Show("该订单更新成功");
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("该订单更新失败");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("该订单请求失败");
+                                                String manu_sql20 =
+                                                    String.Format(
+                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}+{1} where supplier_shop_name = '{2}'",
+                                                        supplier_shop_number, manu_number1, shop_name);
+                                                MySqlCommand comm_manu20 = new MySqlCommand(manu_sql20, conn);
+                                                int manu_num20 = comm_manu20.ExecuteNonQuery();
+                                                if (manu_num20 > 0)
+                                                {
+                                                    MessageBox.Show("该订单取消成功");
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("该取消取消失败");
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            String manu_sql12 = String.Format(
+                                                "insert into `c#_store`.stock_store (stock_shop_name, stock_shop_price, stock_shop_number) VALUES ('{0}','{1}','{2}')",
+                                                shop_name, shop_price, manu_number1);
+                                            MySqlCommand manu_sql_13 = new MySqlCommand(manu_sql12, conn);
+                                            int manu_sql_13_num = manu_sql_13.ExecuteNonQuery();
+                                            if (manu_sql_13_num > 0)
+                                            {
+                                                String manu_sql_15_sql = String.Format(
+                                                    "delete from `c#_store`.manu where manu_shop_name = '{0}'",
+                                                    shop_name);
+                                                MySqlCommand manu_sql_15 = new MySqlCommand(manu_sql_15_sql, conn);
+                                                int manu_sql_15_15_num = manu_sql_15.ExecuteNonQuery();
+                                                if (manu_sql_15_15_num > 0)
+                                                {
+                                                    MessageBox.Show("该订单更新成功");
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("该订单更新失败");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("该订单请求失败");
+                                                String manu_sql14 =
+                                                    String.Format(
+                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}+{1} where supplier_shop_name = '{2}'",
+                                                        supplier_shop_number, manu_number1, shop_name);
+                                                MySqlCommand comm_manu14 = new MySqlCommand(manu_sql14, conn);
+                                                int manu_num14 = comm_manu14.ExecuteNonQuery();
+                                                if (manu_num14 > 0)
+                                                {
+                                                    MessageBox.Show("该订单取消成功");
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("该取消取消失败");
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("订单更新失败");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("请求数量大于库存");
+                                }
                             }
                         }
                         else
@@ -273,13 +397,12 @@ namespace WindowsFormsApp8
 
         private void manu_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Database2 db = new Database2();
-            MySqlConnection conn = db.getConn(); 
+            MySqlConnection conn = db.getConn();
             try
             {
                 conn.Open();
@@ -289,7 +412,6 @@ namespace WindowsFormsApp8
                 MySqlCommand comm = new MySqlCommand(sql, conn);
                 comm.ExecuteNonQuery();
                 MessageBox.Show("删除成功");
-         
             }
             catch (Exception exception)
             {

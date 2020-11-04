@@ -49,6 +49,7 @@ namespace WindowsFormsApp7
                     else
                     {
                         comm2.ExecuteNonQuery();
+                        db2.insert("注册成功");
                         MessageBox.Show("注册成功");
                         Form1.form1.登录ToolStripMenuItem_Click(null,null);
 

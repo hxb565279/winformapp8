@@ -14,6 +14,7 @@ namespace WindowsFormsApp8
             InitializeComponent();
             @select();
             selectall();
+            selectall2();
         String   username=        Form1.form1.username;
         MessageBox.Show("欢迎管理员"+username);
         }
