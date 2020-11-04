@@ -208,15 +208,18 @@ namespace WindowsFormsApp8
                                                     "delete from `c#_store`.stock_supplier where supplier_shop_number= 0");
                                                 MySqlCommand comm7 = new MySqlCommand(sql7, conn);
                                                 comm7.ExecuteNonQuery();
+                                                db.insert_re("订单更新成功");
                                                 MessageBox.Show("该订单更新成功");
                                             }
                                             else
                                             {
+                                                db.insert_re("该订单库存删除失败");
                                                 MessageBox.Show("该订单库存删除失败");
                                             }
                                         }
                                         else
                                         {
+                                            db.insert_re("该订单更新插入失败");
                                             MessageBox.Show("该订单更新插入失败");
                                         }
                                     }
@@ -239,26 +242,31 @@ namespace WindowsFormsApp8
                                                     "delete from `c#_store`.stock_supplier where supplier_shop_number= 0");
                                                 MySqlCommand comm7 = new MySqlCommand(sql7, conn);
                                                 comm7.ExecuteNonQuery();
+                                                db.insert_re("该订单更新成功");
                                                 MessageBox.Show("该订单更新成功");
                                             }
                                             else
                                             {
+                                                db.insert_re("该订单库存删除失败");
                                                 MessageBox.Show("该订单库存删除失败");
                                             }
                                         }
                                         else
                                         {
+                                            db.insert_re("该订单更新插入失败");
                                             MessageBox.Show("该订单更新插入失败");
                                         }
                                     }
                                 }
                                 else
                                 {
+                                    db.insert_re("该订单库存请求，供应库存失败");
                                     MessageBox.Show("该订单库存请求,供应商库存失败");
                                 }
                             }
                             else
                             {
+                                db.insert_re("该订单库存不足,是否需求剩余订单,请输入请求数量");
                                 MessageBox.Show("该订单库存不足,是否需求剩余订单,请输入请求数量");
                                 String manu_number1 = Interaction.InputBox("输入的 请求数量", "请求数量", "", 3, 3);
                                 if (Convert.ToInt32(manu_number1) <= Convert.ToInt32(supplier_shop_number))
@@ -271,6 +279,7 @@ namespace WindowsFormsApp8
                                     int manu_num1 = comm_manu.ExecuteNonQuery();
                                     if (manu_num1 > 0)
                                     {
+                                        db.insert_re("供应商库存更改成功");
                                         MessageBox.Show("供应商库存更改成功");
                                         String manu_sql13 = String.Format(
                                             "select * from  `c#_store`.stock_store where stock_shop_name = '{0}' ",
@@ -293,10 +302,12 @@ namespace WindowsFormsApp8
                                                 int manu_sql_15_15_num1 = manu_sql_19.ExecuteNonQuery();
                                                 if (manu_sql_15_15_num1 > 0)
                                                 {
+                                                    db.insert_re("订单更新成功");
                                                     MessageBox.Show("该订单更新成功");
                                                 }
                                                 else
                                                 {
+                                                    db.insert_re("订单更新失败");
                                                     MessageBox.Show("该订单更新失败");
                                                 }
                                             }
@@ -311,11 +322,13 @@ namespace WindowsFormsApp8
                                                 int manu_num20 = comm_manu20.ExecuteNonQuery();
                                                 if (manu_num20 > 0)
                                                 {
+                                                    db.insert_re("该订单取消成功");
                                                     MessageBox.Show("该订单取消成功");
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("该取消取消失败");
+                                                    db.insert_re("该订单取消失败");
+                                                    MessageBox.Show("该订单取消失败");
                                                 }
                                             }
                                         }
@@ -335,15 +348,18 @@ namespace WindowsFormsApp8
                                                 int manu_sql_15_15_num = manu_sql_15.ExecuteNonQuery();
                                                 if (manu_sql_15_15_num > 0)
                                                 {
+                                                    db.insert_re("订单更新成功");
                                                     MessageBox.Show("该订单更新成功");
                                                 }
                                                 else
                                                 {
+                                                    db.insert_re("订单更新失败");
                                                     MessageBox.Show("该订单更新失败");
                                                 }
                                             }
                                             else
                                             {
+                                                db.insert_re("订单请求失败");
                                                 MessageBox.Show("该订单请求失败");
                                                 String manu_sql14 =
                                                     String.Format(
@@ -353,17 +369,20 @@ namespace WindowsFormsApp8
                                                 int manu_num14 = comm_manu14.ExecuteNonQuery();
                                                 if (manu_num14 > 0)
                                                 {
+                                                    db.insert_re("订单取消失败");
                                                     MessageBox.Show("该订单取消成功");
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("该取消取消失败");
+                                                    db.insert_re("该订单取消失败");
+                                                    MessageBox.Show("该订单取消失败");
                                                 }
                                             }
                                         }
                                     }
                                     else
                                     {
+                                        db.insert_re("订单更新失败");
                                         MessageBox.Show("订单更新失败");
                                     }
                                 }
@@ -375,12 +394,14 @@ namespace WindowsFormsApp8
                         }
                         else
                         {
+                            db.insert_re("供应商订单无库存");
                             MessageBox.Show("供应商该订单无库存");
                         }
                     }
                 }
                 else
                 {
+                    db.insert_re("处理订单为空");
                     MessageBox.Show("处理订单为空");
                 }
             }
@@ -411,6 +432,7 @@ namespace WindowsFormsApp8
                 String sql = String.Format("delete from `c#_store`.manu where `c#_store`.manu.manu_id = '{0}'", value);
                 MySqlCommand comm = new MySqlCommand(sql, conn);
                 comm.ExecuteNonQuery();
+                db.insert_re("删除成功");
                 MessageBox.Show("删除成功");
             }
             catch (Exception exception)

@@ -19,13 +19,36 @@ namespace WindowsFormsApp7
         {
             MySqlConnection conn = getConn();
             conn.Open();
-            String sql2 = String.Format("{0}",sql);
-                String sql1 = String.Format("insert into `c#_store`.login_sql (`sql`, data) VALUES ('{0}','{1}')", sql2,
-                    DateTime.Now.ToString());
-                MySqlCommand comm = new MySqlCommand(sql1, conn);
-                int num1 = comm.ExecuteNonQuery();
-                conn.Close();
-            
+            String sql1 = String.Format("insert into `c#_store`.login_sql (`sql`, data) VALUES ('{0}','{1}')", sql,
+                DateTime.Now.ToString());
+            MySqlCommand comm = new MySqlCommand(sql1, conn);
+            comm.ExecuteNonQuery();
+            conn.Close();
         }
+
+        public void insert_re(String sql)
+        {
+            MySqlConnection conn = getConn();
+            conn.Open();
+            String sql1 = String.Format("insert into re_sql (`sql`, data) VALUES ('{0}','{1}')", sql,
+                DateTime.Now.ToString());
+            MySqlCommand comm = new MySqlCommand(sql1, conn);
+             comm.ExecuteNonQuery();
+            conn.Close();
+        }
+        
+        public void insert_to(String sql)
+        {
+            MySqlConnection conn = getConn();
+            conn.Open();
+            String sql1 = String.Format("insert into to_sql (`sql`, data) VALUES ('{0}','{1}')", sql,
+                DateTime.Now.ToString());
+            MySqlCommand comm = new MySqlCommand(sql1, conn);
+            comm.ExecuteNonQuery();
+            conn.Close();
+        }
+        
+        
+        
     }
 }

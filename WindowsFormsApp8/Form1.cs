@@ -132,6 +132,11 @@ namespace WindowsFormsApp8
             {
                 form.Close();
             }
+            manu_sql manuSql = new manu_sql();
+            manuSql.MdiParent = this;
+            manuSql.FormBorderStyle = FormBorderStyle.None;
+            manuSql.Dock = DockStyle.Fill;
+            manuSql.Show();
         }
 
         private void 出库日志ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,6 +145,11 @@ namespace WindowsFormsApp8
             {
                 form.Close();
             }
+            outbound_sql outboundSql = new outbound_sql();
+            outboundSql.MdiParent = this;
+            outboundSql.FormBorderStyle = FormBorderStyle.None;
+            outboundSql.Dock = DockStyle.Fill;
+            outboundSql.Show();
         }
 
         private void 登录日志ToolStripMenuItem_Click(object sender, EventArgs e)

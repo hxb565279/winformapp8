@@ -88,11 +88,23 @@
         <Compile Include="manu.Designer.cs">
           <DependentUpon>manu.cs</DependentUpon>
         </Compile>
+        <Compile Include="manu_sql.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="manu_sql.Designer.cs">
+          <DependentUpon>manu_sql.cs</DependentUpon>
+        </Compile>
         <Compile Include="outbound.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="outbound.Designer.cs">
           <DependentUpon>outbound.cs</DependentUpon>
+        </Compile>
+        <Compile Include="outbound_sql.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="outbound_sql.Designer.cs">
+          <DependentUpon>outbound_sql.cs</DependentUpon>
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,8 +156,14 @@
         <EmbeddedResource Include="manu.resx">
           <DependentUpon>manu.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="manu_sql.resx">
+          <DependentUpon>manu_sql.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="outbound.resx">
           <DependentUpon>outbound.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="outbound_sql.resx">
+          <DependentUpon>outbound_sql.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

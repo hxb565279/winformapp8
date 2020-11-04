@@ -186,25 +186,31 @@ namespace WindowsFormsApp8
                                     int out_sql_num = comm_outbound_sql.ExecuteNonQuery();
                                     if (out_sql_num > 0)
                                     {
+                                        db.insert_to("出库订单更新成功");
                                         MessageBox.Show("订单更新成功");
                                     }
                                     else
                                     {
+                                        db.insert_to("订单更新失败");
                                         MessageBox.Show("订单更新失败");
                                     }
                                 }
                                 else
                                 {
+                                    db.insert_to("请求订单失败");
                                     MessageBox.Show("请求订单失败");
                                 }
                             }
                             else
                             {
+                                db.insert_to("库存不足");
                                 MessageBox.Show("库存不足");
                                 String num2 = Interaction.InputBox("库存剩余量" + stock_number + ",是否选择选择剩余库存量进行提交", "订单处理",
                                     "", 3, 3);
                                 if (num2 == "")
                                 {
+                                    db.insert_to("该订单请求已经取消");
+
                                     MessageBox.Show("该订单请求已经取消");
                                 }
                                 else
@@ -224,15 +230,18 @@ namespace WindowsFormsApp8
                                         int num5 = comm5.ExecuteNonQuery();
                                         if (num5 > 0)
                                         {
+                                            db.insert_to("出库订单更新成功");
                                             MessageBox.Show("该订单提交成功");
                                         }
                                         else
                                         {
+                                            db.insert_to("该订单提交失败");
                                             MessageBox.Show("该订单提交失败");
                                         }
                                     }
                                     else
                                     {
+                                        db.insert_to("订单处理失败");
                                         MessageBox.Show("订单处理失败");
                                         // String sql4 = String.Format("update stock_store set stock_number = {0}+{1} where stock_shop_name = '{2}' ",stock_number,shop_number,shop_name);    
                                         // MySqlCommand comm4 = new MySqlCommand(sql4,conn);
@@ -251,12 +260,14 @@ namespace WindowsFormsApp8
                         }
                         else
                         {
+                            db.insert_to("无订单库存");
                             MessageBox.Show("无该订单库存");
                         }
                     }
                 }
                 else
                 {
+                    db.insert_to("处理订单为空");
                     MessageBox.Show("处理订单为空");
                 }
             }

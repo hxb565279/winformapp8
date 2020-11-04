@@ -30,10 +30,16 @@
       <e p="manu.cs" t="Include" />
       <e p="manu.Designer.cs" t="Include" />
       <e p="manu.resx" t="Include" />
+      <e p="manu_sql.cs" t="Include" />
+      <e p="manu_sql.Designer.cs" t="Include" />
+      <e p="manu_sql.resx" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="outbound.cs" t="Include" />
       <e p="outbound.Designer.cs" t="Include" />
       <e p="outbound.resx" t="Include" />
+      <e p="outbound_sql.cs" t="Include" />
+      <e p="outbound_sql.Designer.cs" t="Include" />
+      <e p="outbound_sql.resx" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
       <e p="Program.cs" t="Include" />

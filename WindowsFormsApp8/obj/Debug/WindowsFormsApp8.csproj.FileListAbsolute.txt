@@ -21,3 +21,5 @@ D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\Windo
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.stock_supplier.resources
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.create2.resources
 D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.login_sql.resources
+D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.manu_sql.resources
+D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.outbound_sql.resources
