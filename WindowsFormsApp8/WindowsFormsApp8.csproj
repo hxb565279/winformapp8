@@ -40,6 +40,7 @@
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
+        <Reference Include="System.Web" />
         <Reference Include="System.Xml.Linq" />
         <Reference Include="System.Data.DataSetExtensions" />
         <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="affaris.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="affaris.Designer.cs">
+          <DependentUpon>affaris.cs</DependentUpon>
+        </Compile>
         <Compile Include="create1.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -205,6 +212,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="db\c#_store.sql" />
+      <Content Include="images\1.jpg" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

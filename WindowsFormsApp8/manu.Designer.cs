@@ -39,8 +39,12 @@ namespace WindowsFormsApp8
             this.refrash = new System.Windows.Forms.Button();
             this.sumbit1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Web.UI.WebControls.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView2
@@ -127,11 +131,40 @@ namespace WindowsFormsApp8
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(530, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(257, 161);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.ID = null;
+            this.label3.Text = "订单人信息";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (134)));
+            this.label4.Location = new System.Drawing.Point(533, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 31);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "订单人名单";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // manu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 664);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.sumbit1);
             this.Controls.Add(this.refrash);
@@ -145,8 +178,15 @@ namespace WindowsFormsApp8
             this.Load += new System.EventHandler(this.manu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label4;
+
+        private System.Web.UI.WebControls.Label label3;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
 
         private System.Windows.Forms.Button button1;
 

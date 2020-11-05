@@ -14,8 +14,8 @@ namespace WindowsFormsApp8
             InitializeComponent();
             selectall2();
             selectall3();
-            String   username=        Form1.form1.username;
-            MessageBox.Show("欢迎管理员"+username);
+            selectall4();
+       
         }
 
         public void selectall2()
@@ -84,6 +84,36 @@ namespace WindowsFormsApp8
             {
                 conn.Close();
             }
+        }
+
+        public void selectall4()
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                String sql1 = String.Format("select *  from `c#_store`.user_supplier");
+                MySqlCommand comm11 = new MySqlCommand(sql1, conn);
+                MySqlDataAdapter sda11 = new MySqlDataAdapter();
+                sda11.SelectCommand = comm11;
+                //数据集
+                DataSet ds11 = new DataSet();
+                sda11.Fill(ds11, "stock_store");
+                dataGridView1.DataSource = ds11.Tables[0];
+                dataGridView1.Columns[0].HeaderText = "id";
+                dataGridView1.Columns[1].HeaderText = "订单人" ;
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }  
         }
 
 
@@ -167,7 +197,7 @@ namespace WindowsFormsApp8
                             {
                                 String shop_number_sql1 =
                                     String.Format(
-                                        "update `c#_store`.stock_supplier set `c#_store`.stock_supplier.supplier_shop_number= {0}-{1} where supplier_shop_name ='{2}'",
+                                        "update `c#_store`.stock_supplier set `c#_store`.stock_supplier.supplier_shop_number= '{0}'-'{1}' where supplier_shop_name ='{2}'",
                                         supplier_shop_number, shop_number, shop_name);
                                 MySqlCommand comm2 = new MySqlCommand(shop_number_sql1, conn);
                                 if (comm2.ExecuteNonQuery() > 0)
@@ -191,7 +221,7 @@ namespace WindowsFormsApp8
                                         sda.Fill(ds10, "stock_store");
                                         String number = ds10.Tables[0].Rows[0]["stock_shop_number"].ToString().Trim();
                                         String update_sql = String.Format(
-                                            "update `c#_store`.stock_store  set  stock_shop_number={0}+{1} where stock_shop_name='{2}'",
+                                            "update `c#_store`.stock_store  set  stock_shop_number='{0}'+'{1}' where stock_shop_name='{2}'",
                                             number,
                                             shop_number, shop_name);
                                         MySqlCommand comm_update_sql = new MySqlCommand(update_sql, conn);
@@ -273,7 +303,7 @@ namespace WindowsFormsApp8
                                 {
                                     String manu_sql11 =
                                         String.Format(
-                                            "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}-{1} where supplier_shop_name = '{2}'",
+                                            "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number='{0}'-'{1}' where supplier_shop_name = '{2}'",
                                             supplier_shop_number, manu_number1, shop_name);
                                     MySqlCommand comm_manu = new MySqlCommand(manu_sql11, conn);
                                     int manu_num1 = comm_manu.ExecuteNonQuery();
@@ -316,7 +346,7 @@ namespace WindowsFormsApp8
                                                 MessageBox.Show("该订单请求失败");
                                                 String manu_sql20 =
                                                     String.Format(
-                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}+{1} where supplier_shop_name = '{2}'",
+                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number=' {0}'+'{1}' where supplier_shop_name = '{2}'",
                                                         supplier_shop_number, manu_number1, shop_name);
                                                 MySqlCommand comm_manu20 = new MySqlCommand(manu_sql20, conn);
                                                 int manu_num20 = comm_manu20.ExecuteNonQuery();
@@ -363,7 +393,7 @@ namespace WindowsFormsApp8
                                                 MessageBox.Show("该订单请求失败");
                                                 String manu_sql14 =
                                                     String.Format(
-                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= {0}+{1} where supplier_shop_name = '{2}'",
+                                                        "update  `c#_store`.stock_supplier  set `c#_store`.stock_supplier.supplier_shop_number= '{0}'+'{1}' where supplier_shop_name = '{2}'",
                                                         supplier_shop_number, manu_number1, shop_name);
                                                 MySqlCommand comm_manu14 = new MySqlCommand(manu_sql14, conn);
                                                 int manu_num14 = comm_manu14.ExecuteNonQuery();
@@ -444,6 +474,16 @@ namespace WindowsFormsApp8
             {
                 conn.Close();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

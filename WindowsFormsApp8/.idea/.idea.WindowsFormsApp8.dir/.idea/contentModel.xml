@@ -6,6 +6,8 @@
     <e p="C:\Users\和学博\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\和学博\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="D:\Users\windows\RiderProjects\WindowsFormsApp7\WindowsFormsApp8" t="IncludeRecursive">
+      <e p="affaris.cs" t="Include" />
+      <e p="affaris.Designer.cs" t="Include" />
       <e p="App.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="create1.cs" t="Include" />
@@ -21,6 +23,9 @@
       <e p="Form1.cs" t="Include" />
       <e p="Form1.Designer.cs" t="Include" />
       <e p="Form1.resx" t="Include" />
+      <e p="images" t="Include">
+        <e p="1.jpg" t="Include" />
+      </e>
       <e p="login.cs" t="Include" />
       <e p="login.Designer.cs" t="Include" />
       <e p="login.resx" t="Include" />

@@ -25,6 +25,7 @@ namespace WindowsFormsApp8
         {
             form1 = this;
             InitializeComponent();   
+            this.BackgroundImage= Image.FromFile("D:\\Users\\windows\\RiderProjects\\WindowsFormsApp7\\WindowsFormsApp8\\images\\1.jpg");
             String username = form1.username;
             Text = "管理系统,欢迎 " + username+"管理员";
          
@@ -171,6 +172,11 @@ namespace WindowsFormsApp8
             {
                 form.Close();
             }
+            affaris a = new affaris();
+            a.MdiParent = this;
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.Dock = DockStyle.Fill;
+            a.Show();
         }
     }
 }

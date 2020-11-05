@@ -40,8 +40,11 @@ namespace WindowsFormsApp8
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -136,11 +139,34 @@ namespace WindowsFormsApp8
             this.label2.Text = "订单如下";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(581, 42);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(198, 172);
+            this.dataGridView3.TabIndex = 9;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(584, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "订单人信息";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // outbound
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 664);
+            this.ClientSize = new System.Drawing.Size(1235, 664);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
@@ -155,8 +181,13 @@ namespace WindowsFormsApp8
             this.Load += new System.EventHandler(this.outbound_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.DataGridView dataGridView3;
 
         private System.Windows.Forms.Label label2;
 

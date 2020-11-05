@@ -15,8 +15,8 @@ namespace WindowsFormsApp8
             @select();
             selectall();
             selectall2();
-        String   username=        Form1.form1.username;
-        MessageBox.Show("欢迎管理员"+username);
+            selectall3();
+       
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -217,14 +217,14 @@ namespace WindowsFormsApp8
                                 {
                                     String sql3 =
                                         String.Format(
-                                            "update stock_store set stock_shop_number = {0}-{1} where stock_shop_name = '{2}' ",
+                                            "update stock_store set stock_shop_number = '{0}'-'{1}' where stock_shop_name = '{2}' ",
                                             stock_number, num2, shop_name);
                                     MySqlCommand comm3 = new MySqlCommand(sql3, conn);
                                     int num = comm3.ExecuteNonQuery();
                                     if (num > 0)
                                     {
                                         String sql5 = String.Format(
-                                            "update outbound set outbound_shop_number = {0}-{1} where outbound_shop_name = '{2}'",
+                                            "update outbound set outbound_shop_number = '{0}'-'{1}' where outbound_shop_name = '{2}'",
                                             shop_number, num2, shop_name);
                                         MySqlCommand comm5 = new MySqlCommand(sql5, conn);
                                         int num5 = comm5.ExecuteNonQuery();
@@ -341,7 +341,34 @@ namespace WindowsFormsApp8
                 conn.Close();
             }
         }
-        
+
+        public void selectall3()
+        {
+            Database2 db = new Database2();
+            MySqlConnection conn = db.getConn();
+            try
+            {
+                conn.Open();
+                String sql12 = String.Format("select *  from user_customer");
+                MySqlCommand comm12 = new MySqlCommand(sql12, conn);
+                MySqlDataAdapter sda12 = new MySqlDataAdapter();
+                sda12.SelectCommand = comm12;
+                //数据集
+                DataSet ds12 = new DataSet();
+                sda12.Fill(ds12, "user_customer");
+                dataGridView3.DataSource = ds12.Tables[0];
+                dataGridView3.Columns[0].HeaderText = "id";
+                dataGridView3.Columns[1].HeaderText = "订单人";
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -354,6 +381,16 @@ namespace WindowsFormsApp8
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
             
         }

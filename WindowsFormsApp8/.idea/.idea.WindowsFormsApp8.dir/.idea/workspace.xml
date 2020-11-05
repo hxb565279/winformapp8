@@ -22,7 +22,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c788fb2c-fab8-4cdb-8cdb-288a668c2bef" name="默认的" comment="22" />
+    <list default="true" id="c788fb2c-fab8-4cdb-8cdb-288a668c2bef" name="默认的" comment="22">
+      <change afterPath="$PROJECT_DIR$/affaris.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WindowsFormsApp8.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WindowsFormsApp8.dir/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WindowsFormsApp8.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WindowsFormsApp8.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WindowsFormsApp8.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WindowsFormsApp8.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/WindowsFormsApp8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/WindowsFormsApp8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/WindowsFormsApp8.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/WindowsFormsApp8.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manu.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/manu.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/manu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manu.resx" beforeDir="false" afterPath="$PROJECT_DIR$/manu.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manu_sql.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/manu_sql.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/WindowsFormsApp8.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outbound.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/outbound.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outbound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/outbound.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outbound_sql.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/outbound_sql.Designer.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,10 +51,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Users/windows/RiderProjects/WindowsFormsApp7/WindowsFormsApp8/Database2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Users/windows/RiderProjects/WindowsFormsApp7/WindowsFormsApp8/manu.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,10 +62,11 @@
         <option value="$PROJECT_DIR$/store_login.cs" />
         <option value="$PROJECT_DIR$/store_register.cs" />
         <option value="$PROJECT_DIR$/Database2.cs" />
-        <option value="$PROJECT_DIR$/outbound.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/manu_sql.cs" />
         <option value="$PROJECT_DIR$/outbound_sql.cs" />
+        <option value="$PROJECT_DIR$/affaris.cs" />
+        <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/outbound.cs" />
         <option value="$PROJECT_DIR$/manu.cs" />
       </list>
     </option>
@@ -98,6 +116,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604496070401</updated>
       <workItem from="1604496082487" duration="10344000" />
+      <workItem from="1604542620790" duration="3396000" />
+      <workItem from="1604569524981" duration="1477000" />
     </task>
     <task id="LOCAL-00001" summary="22">
       <created>1604505456441</created>
@@ -113,13 +133,20 @@
       <option name="project" value="LOCAL" />
       <updated>1604509751077</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1">
+      <created>1604542696564</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604542696564</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -131,11 +158,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="22" />
-    <option name="LAST_COMMIT_MESSAGE" value="22" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="515" y="361" key="#SQL_方言" timestamp="1604496795838">
@@ -146,22 +175,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604496954163" />
-    <state width="1879" height="188" key="GridCell.Tab.0.bottom" timestamp="1604509768080">
+    <state width="1388" height="179" key="GridCell.Tab.0.bottom" timestamp="1604570763486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604509768080" />
-    <state width="1879" height="188" key="GridCell.Tab.0.center" timestamp="1604509768080">
+    <state width="1388" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604570763486" />
+    <state width="1388" height="179" key="GridCell.Tab.0.center" timestamp="1604570763486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604509768080" />
-    <state width="1879" height="188" key="GridCell.Tab.0.left" timestamp="1604509768080">
+    <state width="1388" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604570763486" />
+    <state width="1388" height="179" key="GridCell.Tab.0.left" timestamp="1604570763486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604509768080" />
-    <state width="1879" height="188" key="GridCell.Tab.0.right" timestamp="1604509768080">
+    <state width="1388" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604570763486" />
+    <state width="1388" height="179" key="GridCell.Tab.0.right" timestamp="1604570763486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604509768080" />
+    <state width="1388" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604570763486" />
     <state width="1879" height="188" key="GridCell.Tab.1.bottom" timestamp="1604509768080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,17 +259,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="187" height="454" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1604496993490" />
-    <state x="818" y="469" key="Items removing confirmation dialog" timestamp="1604507968571">
+    <state x="818" y="469" key="Items removing confirmation dialog" timestamp="1604544749476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="818" y="469" key="Items removing confirmation dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604507968571" />
-    <state x="590" y="178" key="ToolboxManager" timestamp="1604507988009">
+    <state x="818" y="469" key="Items removing confirmation dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604544749476" />
+    <state x="590" y="178" key="ToolboxManager" timestamp="1604544781439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="590" y="178" key="ToolboxManager/0.0.1920.1040@0.0.1920.1040" timestamp="1604507988009" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604509756073">
+    <state x="590" y="178" key="ToolboxManager/0.0.1920.1040@0.0.1920.1040" timestamp="1604544781439" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604542812405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604509756073" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604542812405" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604544459591">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604544459591" />
   </component>
 </project>
